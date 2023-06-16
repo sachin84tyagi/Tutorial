@@ -1,14 +1,8 @@
 3. ### What is the difference between Call, Apply and Bind
 
-   JavaScript is a lightweight, cross-platform, object-oriented programming language. Today, JavaScript can be used in different places
-   • Client-side: Used in browser
-   • Server-side: Node.js, On the server
-   Primitive Data Type
-   • Number – Floating point numbers, for decimals and integers
-   • String – Sequence of characters, used for text
-   • Boolean – Logical data type that can be only true or false
-   • Undefined – Data type of a variable that does not have a value yet
-   • Null – Means non-existent
+   Prototype chaining is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language.
+
+The prototype on object instance is available through Object.getPrototypeOf(object) or **proto** property whereas prototype on constructors function is available through Object.prototype.
 
 Variable mutation and type coercion
 
