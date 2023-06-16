@@ -17,3 +17,13 @@ console.log(firstName + " is a " + age + " year old " + job + ". Is he married? 
 let lastName = prompt("What is his last Name?");
 console.log(firstName + " " + lastName);
 ```
+2. ### Function Statements and Expression
+```javascript
+//Function Statements
+function funcName(year, firstName) {}
+funcName(1990, 'John');
+
+// Function expression
+let funcName = function(job, firstName) {}
+funcName('teacher', 'John')
+```
