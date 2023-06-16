@@ -1,6 +1,4 @@
 1. ### Variable mutation and type coercion
-   Variable mutation and type coercion
-
 ```javascript
 let firstName = "John";
 let age = 28;
@@ -22,7 +20,6 @@ console.log(firstName + " " + lastName);
 //Function Statements
 function funcName(year, firstName) {}
 funcName(1990, 'John');
-
 // Function expression
 let funcName = function(job, firstName) {}
 funcName('teacher', 'John')
