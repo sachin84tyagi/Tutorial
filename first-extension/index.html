@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Extension</title>
+    <style>
+        .note {
+            width: 77px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 45px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="note"> Event </div>
+    <!-- <script src="extv01.js"></script> -->
+    <!-- <script src="extv02.js"></script> -->
+    <!-- <script src="extv03.js"></script> -->
+    <!-- <script src="extv04.js"></script> -->
+    <!-- <script src="extv05.js"></script> -->
+    <!-- <script src="extv06.js"></script> -->
+    <!-- <script src="extv07.js"></script> -->
+    <!-- <script src="extv08.js"></script> -->
+    <!-- <script src="extv09.js"></script> -->
+    <!-- <script src="extv10.js"></script> -->
+    <script src="extv11.js"></script>
+    <script>
+
+        //Example execution for extv01.js
+        // console.log(ext)
+
+        //Example execution for extv02.js
+        // console.log(window.multiply(6,7))
+        // console.log(multiply(6,7))
+
+        //Example execution for extv03.js
+        // console.log(ext.sum(6,7))
+        // console.log(ext.multiply(6,7))
+
+        //Example execution for extv04.js
+        // console.log(ext.sum(6,7))
+        // console.log(ext.multiply(6,7))
+
+        //Example execution for extv05.js
+        // console.log(ext.sum(6,7))
+        // console.log(ext.multiply(6,7))
+
+        //Example execution for extv06.js
+        // console.log(ext.sum(6,7))
+        // console.log(ext.multiply(6,7))
+
+        //Example execution for extv07.js
+        // console.log(ext.sum(6,7))
+        // console.log(ext.multiply(6,7))
+
+        //Example execution for extv08.js
+        // const numsArr = [1,3,5,7,9,8] //true
+        // const wordsArr = ['a', 'b', 'c', 'd'] //true
+        // const wordsObj = {} //false
+        // const wordsFunc = function() {} //false
+        //console.log(ext.isArrayLike(words))
+
+        //Example execution for extv08.js
+        // const numsArr = [1,3,5,7,9,8]
+        // console.log(ext.isArrayLike(numsArr))
+
+         //Example execution for extv09.js
+         // const numsArr = [1,3,5,7,9,8]
+         // console.log(ext.isArrayLike(numsArr))
+         // Uncaught TypeError: Cannot read properties of undefined (reading 'isArrayLike')
+
+         //Example execution for extv10.js
+         // const numsArr = [1,3,5,7,9,8]
+         // console.log(ext.isArrayLike(numsArr))
+         // Uncaught ReferenceError: ext is not defined
+
+         //Example execution for extv11.js
+          const numsArr = [1,3,5,7,9,8]
+          async function getRes() {
+            console.log('window :: ', window)
+            const res = await ext.isArrayLike(numsArr)
+            console.log('res :: ', res)
+            return res
+          }
+        getRes()
+        
+        
+
+          
+        
+    </script>
+</body>
+</html>

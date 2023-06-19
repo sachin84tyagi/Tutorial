@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Custom Event</title>
+    <style>
+        .note {
+            width: 77px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 45px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="note"> Event </div>
+    <script>
+        const divEl = document.querySelector('.note');
+        function callHighlight() {
+            const setColor = 'green'
+            const customEvent = new CustomEvent('highlight', {
+                detail: {
+                    color: setColor
+                }
+            })
+            divEl.dispatchEvent(customEvent)
+        }
+        divEl.addEventListener('highlight', function(e) {
+            const { detail } = e
+            divEl.style.border = "2px solid yellow";
+            divEl.style.background = detail.color;
+            divEl.style.color = '#FFF';
+            console.log(detail.color)
+
+        })
+
+        divEl.addEventListener('click', function(e) {
+            callHighlight()
+        })
+        
+        // function highlight(elem) {
+        //     const bgColor = 'yellow';
+        //     elem.style.backgroundColor = bgColor;
+
+        //     // create the event
+        //     let event = new CustomEvent('highlight', {
+        //         detail: {
+        //             backgroundColor: bgColor
+        //         }
+        //     });
+        //     // dispatch the event
+        //     elem.dispatchEvent(event);
+        // }
+
+        // // Select the div element
+        // let div = document.querySelector('.note');
+
+        // // Add border style
+        // function addBorder(elem) {
+        //     elem.style.border = "solid 1px red";
+        // }
+
+        // // Listen to the highlight event
+        // div.addEventListener('highlight', function (e) {
+        //     addBorder(this);
+
+        //     // examine the background
+        //     console.log(e.detail);
+        // });
+
+        // // highlight div element
+        // highlight(div);
+    </script>
+</body>
+</html>
