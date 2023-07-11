@@ -557,4 +557,38 @@ export default class TodoHelper {
     { name: 'Tony', employed: false },
     { name: 'Nellie', employed: false }]
     */
+    removeDuplicate(a, k) {
+        if (!this.isArray(a)) return `Please provide an Array type.`
+        if (k && !this.isString(k)) return `Please provide key of String type.`
+        if (k && this.isString(k)) {
+            return a.filter((obj, index, a) => {
+                return a.map((mapObj) => {
+                    return mapObj[k];
+                }).indexOf(obj[k]) === index;
+            });
+        } else {
+            return a.filter((item, index, a) => {
+                return a.indexOf(item) == index;
+            });
+        }
+    }
+
+    removeOne(arr = [], fn) {
+        const len = arr.length;
+        if (!(fn.call && fn.apply)) {
+            const val = fn;
+            fn = el => el === val;
+        }
+        for (let i = 0; i < len; i++) {
+            if (fn(arr[i], i, arr)) {
+                return [...arr.slice(0, i), ...arr.slice(i + 1)];
+            }
+        }
+        return arr.slice();
+    };
+    //const data = [{name: 'Phil'}, {name: 'Andrea'}, {name: 'Sam'}, {name: 'Dam'}, {name: 'Jam'}];
+    //console.log(removeOne(data, (v) => v.name === 'Sam'));
+
+    //const letters = ['a', 'b', 'c', 'd', 'e'];
+    //console.log(removeOne(letters, 'd'));
 }
