@@ -653,6 +653,9 @@ export default class TodoHelper {
         return sortedArray;
     }
 
+    //sortArrayofObject([1, 2, 4, 3, 5], "desc");
+    //[5, 4, 3, 2, 1]
+
     //   sortArrayofObject(
     //     [
     //       { name: "Test", age: 18 },
