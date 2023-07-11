@@ -631,4 +631,35 @@ export default class TodoHelper {
     //=> [{name: 'a'}, {name: 'b'}, {name: 'c'}]
     //sortJsonArray([{name: 'c'}, {name: 'a'}, {name: 'b'}], 'name','des');
     //=> [{name: 'c'}, {name: 'b'}, {name: 'a'}]
+
+    sortArrayofObject(arrayData, sortType, keyName) {
+        let sortedArray = arrayData.sort((a, b) => {
+            return keyName
+                ? sortType === "desc"
+                    ? a[keyName] > b[keyName]
+                        ? -1
+                        : a[keyName] < b[keyName]
+                            ? 1
+                            : 0
+                    : a[keyName] < b[keyName]
+                        ? -1
+                        : a[keyName] > b[keyName]
+                            ? 1
+                            : 0
+                : sortType === "desc"
+                    ? b - a
+                    : a - b;
+        });
+        return sortedArray;
+    }
+
+    //   sortArrayofObject(
+    //     [
+    //       { name: "Test", age: 18 },
+    //       { name: "Sam", age: 9 },
+    //       { name: "Randon", age: 75 },
+    //     ],
+    //     "asc",
+    //     "age"
+    //   );
 }
