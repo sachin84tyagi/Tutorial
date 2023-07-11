@@ -591,4 +591,44 @@ export default class TodoHelper {
 
     //const letters = ['a', 'b', 'c', 'd', 'e'];
     //console.log(removeOne(letters, 'd'));
+
+    sortjsonarray(arr, prop, order) {
+        if (arr == null) {
+            return [];
+        }
+        if (!Array.isArray(arr)) {
+            throw new TypeError('sort-json-array expects an array.');
+        }
+        if (arguments.length === 1) {
+            return arr.sort();
+        }
+        if (arguments[2] == null || arguments[2] == "asc") {
+            return arr.sort(compare(prop, 1));
+        } else if (arguments[2] == "des") {
+            return arr.sort(compare(prop, 0));
+        } else {
+            throw new TypeError('Wrong argument.');
+        }
+
+        function compare(attr, value) {
+            if (value) {
+                return function (a, b) {
+                    var x = (a[attr] === null) ? "" : "" + a[attr],
+                        y = (b[attr] === null) ? "" : "" + b[attr];
+                    return x < y ? -1 : (x > y ? 1 : 0)
+                }
+            } else {
+                return function (a, b) {
+                    var x = (a[attr] === null) ? "" : "" + a[attr],
+                        y = (b[attr] === null) ? "" : "" + b[attr];
+                    return x < y ? 1 : (x > y ? -1 : 0)
+                }
+            }
+        }
+    };
+
+    //sortjsonarray([{name: 'c'}, {name: 'a'}, {name: 'b'}], 'name');
+    //=> [{name: 'a'}, {name: 'b'}, {name: 'c'}]
+    //sortJsonArray([{name: 'c'}, {name: 'a'}, {name: 'b'}], 'name','des');
+    //=> [{name: 'c'}, {name: 'b'}, {name: 'a'}]
 }
