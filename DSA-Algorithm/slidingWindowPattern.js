@@ -33,7 +33,7 @@ function findSubArrayMaxSum4(N, K, arr) {
 
 //Sliding window pattern
 console.log(findSubArrayMaxSum3(arr, K))
-console.log(findSubArrayMaxSum3(arr, K))
+console.log(findSubArrayMaxSum4(arr, K))
 
 function findSubArrayMaxSum3(arr, K) {
     let currentSum = 0;
