@@ -1,0 +1,16 @@
+//calculate sum of sub array ie- i=2 and j=5 => 26
+const arr = [1, 4, 5, 8, 9, 12, 18]
+console.log(findSubArraySum(arr, 3, 7))
+//console.log('sumArr :: ', sumArr)
+
+function findSubArraySum(targetArr, startIndex, endIndex) {
+    const mainStart = startIndex - 1
+    const mainEnd = endIndex - 1
+    const sumArr = []
+    let sum = 0
+    for (let i = 0; i < targetArr.length; i++) {
+        sum += targetArr[i]
+        sumArr.push(sum)
+    }
+    return sumArr[mainEnd] - sumArr[mainStart - 1]
+}
