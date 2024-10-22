@@ -1,7 +1,5 @@
 //import withFeature from "../basic-hoc/withFeature";
 
-//const enableNewFeatures = false;
-
 const Feature = () => {
     return (<>
         <hr />
@@ -11,9 +9,3 @@ const Feature = () => {
 }
 
 export default Feature
-// const NewFeatureComponentWithToggle = withFeature(
-//     Feature,
-//     enableNewFeatures
-// );
-
-//export default withFeature(Feature, enableNewFeatures);
